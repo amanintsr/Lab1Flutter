@@ -1,41 +1,36 @@
+import 'package:first_app/custom_button.dart';
+import 'package:first_app/custom_text.dart';
 import 'package:flutter/material.dart';
 
-void clicked () {
+void clicked() {
   print("the button is clicked");
 }
+
 void main() {
-  runApp(MaterialApp(
-    home: Scaffold(
-     body: Container(
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.pink, Colors.blue], 
-              begin: AlignmentGeometry.topCenter, 
-              end: AlignmentGeometry.bottomCenter
-              ),
-              ),
+              colors: [Colors.pink, Colors.blue],
+              begin: AlignmentGeometry.topCenter,
+              end: AlignmentGeometry.bottomCenter,
+            ),
+          ),
           child: Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                Center(
-                  child: Text(
-                    "Hello Word", 
-                    style: TextStyle(
-                      color: const Color.fromRGBO(100, 35, 15, 1), 
-                      fontSize: 70, 
-                    ),
-                    ),
-                    ),
-                    TextButton(onPressed: clicked, child: Text("Click me!", style: TextStyle(color: Colors.red),
-                    ),
-                    ),
-                    ],),
-                    ),
-            
+                Center(child: CustomText("Hello")),
+                CustomText("World"),
+                CustomText("HEHE"),
+                CustomButton(),
+              ],
             ),
           ),
-              ),
-              );
-    
+        ),
+      ),
+    ),
+  );
 }
